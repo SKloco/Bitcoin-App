@@ -1,0 +1,19 @@
+
+  @mixin for-narrow-layout {
+    @media (max-width: $break-normal) {
+      @content;
+    }
+  }
+  
+  @mixin for-normal-layout {
+    @media (min-width: $break-normal) {
+      @content;
+    }
+  }
+  @mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+  

@@ -1,0 +1,48 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 14px;
+  font-family: OpenSans-Regular;
+  color: white;
+  background-color: $mainbg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+li{
+  color: white;
+}
+
+img {
+  width: 100%;
+}
+
+button,
+input {
+    cursor: pointer;
+}
+#app{
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,21 @@
+.main-layout {
+  background-color: $mainbg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+//   @include for-narrow-layout {
+//     padding: $layoutPaddingMoblie;
+//     width: $break-narrow;
+//     header{}
+//     main{
+//         .feature-list{
+//             width: 320px;
+//         }
+//     }
+//   }
+
+  @include for-normal-layout {
+    padding: $layoutPaddingDesktop;
+    width: $break-normal;
+  }
+}
