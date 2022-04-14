@@ -1,6 +1,7 @@
 export default {
     getUser,
   }
+  
   const loggedInUser={
       name:"Sagi K",
       coins:100,
