@@ -3,6 +3,7 @@ import { AppHeader } from '../components/AppHeader'
 import { HomePage } from './HomePage'
 import { ContactPage } from './ContactPage'
 import { ContactDetailsPage } from './ContactDetailsPage'
+import { StatisticPage } from './StatisticPage'
 export class BitcoinApp extends Component {
   state = {
     currentPage: 'Home',
@@ -14,7 +15,6 @@ export class BitcoinApp extends Component {
   }
   onSelectContact = async (contactId) => {
     this.setState({ selectedcontactId: contactId }, this.setState({ currentPage: 'ContactDetailsPage' }))
-    
   }
   CurrPage = () => {
     switch (this.state.currentPage) {
@@ -24,6 +24,8 @@ export class BitcoinApp extends Component {
         return <ContactPage onSelectContact={this.onSelectContact} />
       case 'ContactDetailsPage':
         return <ContactDetailsPage contactId={this.state.selectedcontactId} />
+      case 'StatisticPage':
+        return <StatisticPage />
       default:
         return <HomePage />
     }

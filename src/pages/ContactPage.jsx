@@ -7,7 +7,6 @@ export class ContactPage extends Component {
   state = {
     contacts: null,
     filterBy: null,
-    selectedcontactId: null,
   }
 
   componentDidMount() {
@@ -19,20 +18,17 @@ export class ContactPage extends Component {
     this.setState({ contacts })
   }
 
-
-
   onRemoveContact = async (contactId) => {
     await contactService.remove(contactId)
     this.loadContact()
   }
   render() {
-    const { contacts, selectedcontactId } = this.state
+    const { contacts } = this.state
 
     if (!contacts) return <div>Loading ....</div>
     return (
       <div>
         <section>
-          
           <ContactList onRemoveContact={this.onRemoveContact} onSelectContact={this.props.onSelectContact} contacts={contacts} />
         </section>
       </div>
