@@ -45,7 +45,7 @@ export class Chart extends Component {
               <h4>{description}</h4>
               <section>
                 <Sparklines data={MPdata} margin={6}>
-                  <SparklinesLine style={{ strokeWidth: 3, stroke: '#336aff', fill: 'none' }} />
+                  <SparklinesLine style={{ strokeWidth: 3, stroke: '#336aff', fill: { color } }} />
                   <SparklinesSpots size={4} style={{ stroke: '#336aff', strokeWidth: 3, fill: { color } }} />
                 </Sparklines>
               </section>

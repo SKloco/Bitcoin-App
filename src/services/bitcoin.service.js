@@ -10,13 +10,13 @@ export default  {
 
 //keys
 const RATE_KEY = 'bitcoinRate'
-const MarketPrice_KEY = 'marketPrice'
-const ConfirmedTransactions_KEY = 'confirmedTransactions'
+const MARKET_PRICE_KEY = 'marketPrice'
+const CONFIRMED_TRANSACTIONS_KEY = 'confirmedTransactions'
 
 //cache
 var gRateCache = storageService.loadFromStorage(RATE_KEY) || null
-var gMarketPriceCache = storageService.loadFromStorage(MarketPrice_KEY) || []
-var gConfirmedTransactionsCache = storageService.loadFromStorage(ConfirmedTransactions_KEY) || []
+var gMarketPriceCache = storageService.loadFromStorage(MARKET_PRICE_KEY) || []
+var gConfirmedTransactionsCache = storageService.loadFromStorage(CONFIRMED_TRANSACTIONS_KEY) || []
 
 //params
 const currency = 'USD'
@@ -47,7 +47,7 @@ async function getMarketPrice() {
     var res = await axios.get(getMarketPriceUrl)
     res = res.data.values
     gMarketPriceCache = res
-    storageService.saveToStorage(MarketPrice_KEY, gMarketPriceCache)
+    storageService.saveToStorage(MARKET_PRICE_KEY, gMarketPriceCache)
     return res
   } catch (err) {
     console.log(err)
@@ -64,7 +64,7 @@ async function getConfirmedTransactions() {
     var res = await axios.get(getgConfirmedTransactionsUrl)
     res = res.data.values
     gConfirmedTransactionsCache = res
-    storageService.saveToStorage(ConfirmedTransactions_KEY, gConfirmedTransactionsCache)
+    storageService.saveToStorage(CONFIRMED_TRANSACTIONS_KEY, gConfirmedTransactionsCache)
     return res
   } catch (err) {
     console.log(err)
