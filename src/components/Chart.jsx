@@ -13,15 +13,6 @@ export class Chart extends Component {
     this.loadDataConfirmedTransactions()
   }
 
-  // loadChart = async () => {
-  //   const { title, data, description, color } = this.props
-  //   return (
-  //     <div>
-  //       <h1>{title}</h1>
-  //     </div>
-  //   )
-  // }
-
   loadDataMarketPrice = async () => {
     const data = await bitcoinService.getMarketPrice()
     var newData = []
@@ -43,21 +34,34 @@ export class Chart extends Component {
 
   render() {
     const { MPdata, CTdata } = this.state
+    const { title, data, description, color } = this.props
     if (!MPdata || !CTdata) return <div>Loading...</div>
     return (
       <div>
         <section>
-          <h1>Market Price</h1>
-          <Sparklines data={MPdata} margin={6}>
-            <SparklinesLine style={{ strokeWidth: 3, stroke: '#336aff', fill: 'none' }} />
-            <SparklinesSpots size={4} style={{ stroke: '#336aff', strokeWidth: 3, fill: 'white' }} />
-          </Sparklines>
-        </section>
-        <section>
-          <h1>Confirmed Transactions</h1>
-          <Sparklines data={CTdata}>
-            <SparklinesBars color="blue" />
-          </Sparklines>
+          {data === 'marketprice' && (
+            <div>
+              <h1>{title}</h1>
+              <h4>{description}</h4>
+              <section>
+                <Sparklines data={MPdata} margin={6}>
+                  <SparklinesLine style={{ strokeWidth: 3, stroke: '#336aff', fill: 'none' }} />
+                  <SparklinesSpots size={4} style={{ stroke: '#336aff', strokeWidth: 3, fill: { color } }} />
+                </Sparklines>
+              </section>
+            </div>
+          )}
+          {data === 'confirmedtransactions' && (
+            <div>
+              <h1>{title}</h1>
+              <h4>{description}</h4>
+              <section>
+                <Sparklines data={CTdata}>
+                  <SparklinesBars color={color} />
+                </Sparklines>
+              </section>
+            </div>
+          )}
         </section>
       </div>
     )
