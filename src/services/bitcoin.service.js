@@ -2,7 +2,7 @@
 import axios from 'axios'
 import { storageService } from './storage.service'
 //exports
-export default {
+export default  {
   getRate,
   getMarketPrice,
   getConfirmedTransactions,
@@ -11,10 +11,12 @@ export default {
 //keys
 const RATE_KEY = 'bitcoinRate'
 const MarketPrice_KEY = 'marketPrice'
+const ConfirmedTransactions_KEY = 'confirmedTransactions'
 
 //cache
 var gRateCache = storageService.loadFromStorage(RATE_KEY) || null
 var gMarketPriceCache = storageService.loadFromStorage(MarketPrice_KEY) || []
+var gConfirmedTransactionsCache = storageService.loadFromStorage(ConfirmedTransactions_KEY) || []
 
 //params
 const currency = 'USD'
@@ -53,6 +55,19 @@ async function getMarketPrice() {
   }
 }
 
-function getConfirmedTransactions() {
-  //   return
+async function getConfirmedTransactions() {
+  if (gConfirmedTransactionsCache.length) {
+    return new Promise((resolve) => resolve(gConfirmedTransactionsCache))
+  }
+  const getgConfirmedTransactionsUrl = `https://api.blockchain.info/charts/trade-volume?timespan=1months&format=json&cors=true`
+  try {
+    var res = await axios.get(getgConfirmedTransactionsUrl)
+    res = res.data.values
+    gConfirmedTransactionsCache = res
+    storageService.saveToStorage(ConfirmedTransactions_KEY, gConfirmedTransactionsCache)
+    return res
+  } catch (err) {
+    console.log(err)
+    throw err
+  }
 }

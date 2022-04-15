@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { contactService } from '../services/contact.service'
 import { ContactList } from '../components/ContactList'
-import { ContactDetailsPage } from './ContactDetailsPage'
+
 
 export class ContactPage extends Component {
   state = {
