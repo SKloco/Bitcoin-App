@@ -1,14 +1,15 @@
 .contact-list {
   display: flex;
+  /* flex-direction: column; */
   flex-wrap: wrap;
-  flex-direction: column;
   justify-content: center;
-  justify-items: center;
+  /* width: 30vh; */
+  margin: 0 15% 0 15%;
 }
 @media (max-width: $break-narrow) {
-    .contact-list {
-        
-      }
+  .contact-list {
+
+  }
 }
 
 // @media (min-width: $break-narrow) {
