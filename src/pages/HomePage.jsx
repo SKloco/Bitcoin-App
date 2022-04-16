@@ -17,7 +17,7 @@ export class HomePage extends Component {
     this.setState({ user: userService.getUser() })
   }
   async loadRate() {
-    const bitcoindRate =await bitcoinService.getRate()
+    const bitcoindRate = await bitcoinService.getRate()
     this.setState({ bitcoindRate })
   }
 
@@ -26,14 +26,15 @@ export class HomePage extends Component {
     if (!user) return <div>Loading...</div>
 
     return (
-      <div>
-        HomePage
-        <section>
-          <h1>{this.state.user.name}</h1>
-          <h1>amount of coins = {this.state.user.coins}</h1>
-          <h1>bitcoind rate = {this.state.bitcoindRate}</h1>
-        </section>
-      </div>
+      <section className="home-page">
+        <h1>{this.state.user.name}</h1>
+        <span className="container">
+          <img src={require('../assets/imgs/coins.png')} alt="" /> <h4 className="container__title"> {this.state.user.coins}</h4>
+        </span>
+        <span className="container">
+          <img src={require('../assets/imgs/bitcoin.png')} alt="" /> <h4 className="container__title">{this.state.bitcoindRate}</h4>
+        </span>
+      </section>
     )
   }
 }

@@ -1,0 +1,26 @@
+.home-page {
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  .container {
+    display: flex;
+    justify-items: center;
+    gap: 10px;
+
+    &__title {
+      align-self: center;
+    }
+  }
+}
+@media (max-width: $break-narrow) {
+}
+
+// @media (min-width: $break-narrow) {
+// }
+
+@media (min-width: $break-normal) {
+}
+
+@media (min-width: $break-wide) {
+}

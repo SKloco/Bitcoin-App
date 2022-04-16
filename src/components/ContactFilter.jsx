@@ -16,11 +16,9 @@ export class ContactFilter extends Component {
   render() {
     const { term } = this.state
     return (
-      <section>
-        <section>
-          <label htmlFor="search">Search</label>
-          <input onChange={this.handleChange} type="term" id="term" name="term" value={term} />
-        </section>
+      <section className="contact-filter">
+        {/* <label htmlFor="search">Search</label> */}
+        <input onChange={this.handleChange} type="term" id="term" name="term" value={term} placeholder="Search"/>
       </section>
     )
   }

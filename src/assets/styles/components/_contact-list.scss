@@ -1,0 +1,21 @@
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
+@media (max-width: $break-narrow) {
+    .contact-list {
+        
+      }
+}
+
+// @media (min-width: $break-narrow) {
+// }
+
+@media (min-width: $break-normal) {
+}
+
+@media (min-width: $break-wide) {
+}

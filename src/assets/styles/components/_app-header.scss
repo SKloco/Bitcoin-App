@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: $headerclr;
+  padding: 1rem;
+
+  .header__btn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+}
+@media (max-width: $break-narrow) {
+  header {
+    justify-content: space-evenly;
+  }
+}
+
+// @media (min-width: $break-narrow) {
+// }
+
+@media (min-width: $break-normal) {
+}
+
+@media (min-width: $break-wide) {
+}

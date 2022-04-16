@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -7,7 +9,7 @@ body {
   font-size: 14px;
   font-family: OpenSans-Regular;
   color: white;
-  background-color: $mainbg;
+  background: #002d62;
 }
 
 h1,
@@ -28,9 +30,8 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-
 }
-li{
+li {
   color: white;
 }
 
@@ -40,9 +41,9 @@ img {
 
 button,
 input {
-    cursor: pointer;
+  cursor: pointer;
 }
-#app{
+#app {
   display: flex;
   justify-content: center;
 }

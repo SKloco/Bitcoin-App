@@ -1,21 +1,30 @@
 .main-layout {
-  background-color: $mainbg;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-//   @include for-narrow-layout {
-//     padding: $layoutPaddingMoblie;
-//     width: $break-narrow;
-//     header{}
-//     main{
-//         .feature-list{
-//             width: 320px;
-//         }
-//     }
-//   }
+  display: grid;
+  grid-template-columns: $layoutPadding 1fr $layoutPadding;
+  background-image: url("https://res.cloudinary.com/trellox/image/upload/v1650032903/maxim-hopman-fiXLQXAhCfk-unsplash_qfnsqf.jpg");
+  // background-image: url("https://res.cloudinary.com/trellox/image/upload/v1650032656/photo-1640340434855-6084b1f4901c_jhgpdi.avif");
+  // background-image: url("https://res.cloudinary.com/trellox/image/upload/v1650031591/photo-1611974789855-9c2a0a7236a3_hlytcr.avif");
+  // background-image: url("https://res.cloudinary.com/trellox/image/upload/v1650032371/photo-1642682969825-09c60a60e989_ecty5p.avif");
+  background-size: cover;
+  font-size: 14px;
+  // min-height: 100vh;
+
+  > * {
+      grid-column: 2;
+  }
+
+  @include for-narrow-layout {
+    font-size: 16px;
+      @include layoutGTC($break-narrow);
+  }
 
   @include for-normal-layout {
-    padding: $layoutPaddingDesktop;
-    width: $break-normal;
+    font-size: 18px;
+      @include layoutGTC($break-normal);
+  }
+
+  @include for-wide-layout {
+    font-size: 20px;
+      @include layoutGTC($break-wide);
   }
 }
