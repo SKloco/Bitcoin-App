@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.234f64fa.css",
-    "main.js": "/static/js/main.1a241907.js",
-    "static/js/787.c386f9fe.chunk.js": "/static/js/787.c386f9fe.chunk.js",
-    "static/media/Raleway-Regular.ttf": "/static/media/Raleway-Regular.9ade142e81dd8d55cd32.ttf",
-    "static/media/Raleway-Bold.ttf": "/static/media/Raleway-Bold.d1a96e2aa6257c864d4d.ttf",
-    "static/media/OpenSans-Regular.ttf": "/static/media/OpenSans-Regular.d7d7b8359eeb9cddfba6.ttf",
-    "static/media/OpenSans-Bold.ttf": "/static/media/OpenSans-Bold.6e27168fc8a5a200a026.ttf",
-    "static/media/bitcoin.png": "/static/media/bitcoin.ee6c4d5fa4a9b6d9f01f.png",
-    "static/media/coins.png": "/static/media/coins.b8e94088e86d11d664a4.png",
-    "static/media/charts.png": "/static/media/charts.779d1f1b59942cefa18a.png",
-    "static/media/home.png": "/static/media/home.eafe224d4c515213d9d5.png",
-    "static/media/phone-book.png": "/static/media/phone-book.6e76cf17f895bc097e2e.png",
-    "index.html": "/index.html",
-    "main.234f64fa.css.map": "/static/css/main.234f64fa.css.map",
-    "main.1a241907.js.map": "/static/js/main.1a241907.js.map",
-    "787.c386f9fe.chunk.js.map": "/static/js/787.c386f9fe.chunk.js.map"
+    "main.css": "/Bitcoin-App/static/css/main.e3cf0661.css",
+    "main.js": "/Bitcoin-App/static/js/main.273fe31b.js",
+    "static/js/787.c386f9fe.chunk.js": "/Bitcoin-App/static/js/787.c386f9fe.chunk.js",
+    "static/media/Raleway-Regular.ttf": "/Bitcoin-App/static/media/Raleway-Regular.9ade142e81dd8d55cd32.ttf",
+    "static/media/Raleway-Bold.ttf": "/Bitcoin-App/static/media/Raleway-Bold.d1a96e2aa6257c864d4d.ttf",
+    "static/media/OpenSans-Regular.ttf": "/Bitcoin-App/static/media/OpenSans-Regular.d7d7b8359eeb9cddfba6.ttf",
+    "static/media/OpenSans-Bold.ttf": "/Bitcoin-App/static/media/OpenSans-Bold.6e27168fc8a5a200a026.ttf",
+    "static/media/bitcoin.png": "/Bitcoin-App/static/media/bitcoin.ee6c4d5fa4a9b6d9f01f.png",
+    "static/media/coins.png": "/Bitcoin-App/static/media/coins.b8e94088e86d11d664a4.png",
+    "static/media/charts.png": "/Bitcoin-App/static/media/charts.779d1f1b59942cefa18a.png",
+    "static/media/home.png": "/Bitcoin-App/static/media/home.eafe224d4c515213d9d5.png",
+    "static/media/phone-book.png": "/Bitcoin-App/static/media/phone-book.6e76cf17f895bc097e2e.png",
+    "index.html": "/Bitcoin-App/index.html",
+    "main.e3cf0661.css.map": "/Bitcoin-App/static/css/main.e3cf0661.css.map",
+    "main.273fe31b.js.map": "/Bitcoin-App/static/js/main.273fe31b.js.map",
+    "787.c386f9fe.chunk.js.map": "/Bitcoin-App/static/js/787.c386f9fe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.234f64fa.css",
-    "static/js/main.1a241907.js"
+    "static/css/main.e3cf0661.css",
+    "static/js/main.273fe31b.js"
   ]
 }
