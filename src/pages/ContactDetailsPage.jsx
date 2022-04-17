@@ -28,14 +28,21 @@ export class ContactDetailsPage extends Component {
     const { chosenContact } = this.state
     if (!chosenContact) return <div>Loading ....</div>
     return (
-      <section>
-        <h4>first name {chosenContact.name}</h4>
-        <section>
+      <>
+        <section className="contact-detail">
+          <img src={`https://robohash.org/set_set5/${chosenContact._id}.png`} alt="img" />
+          <section className="personal">
+            <h4>Name: {chosenContact.name}</h4>
+            <h4>Email: {chosenContact.email}</h4>
+            <h4>Phone: {chosenContact.phone}</h4>
+          </section>
+        </section>
+        <section className="btns">
           <button onClick={this.onBack}>Back</button>
-          <Link to={`/contact/edit/${chosenContact._id}`} >Edit Contact</Link>
+          <Link to={`/contact/edit/${chosenContact._id}`}>Edit Contact</Link>
           {/* <Link to="/robot/r2">Next Robot</Link> */}
         </section>
-      </section>
+      </>
     )
   }
 }

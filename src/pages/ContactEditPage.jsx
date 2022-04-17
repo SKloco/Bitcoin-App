@@ -28,7 +28,7 @@ export class ContactEditPage extends Component {
   }
   onBack = () => {
     if (this.state.contact._id) this.props.history.push(`/contact/${this.state.contact._id}`)
-    this.props.history.push('/contact')
+    else this.props.history.push('/contact')
   }
 
   render() {
