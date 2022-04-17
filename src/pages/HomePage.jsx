@@ -5,7 +5,7 @@ import bitcoinService from '../services/bitcoin.service'
 export class HomePage extends Component {
   state = {
     user: null,
-    bitcoindRate: null,
+    bitcoinRate: null,
   }
 
   componentDidMount() {
@@ -17,8 +17,8 @@ export class HomePage extends Component {
     this.setState({ user: userService.getUser() })
   }
   async loadRate() {
-    const bitcoindRate = await bitcoinService.getRate()
-    this.setState({ bitcoindRate })
+    const bitcoinRate = await bitcoinService.getRate()
+    this.setState({ bitcoinRate })
   }
 
   render() {
@@ -32,7 +32,7 @@ export class HomePage extends Component {
           <img src={require('../assets/imgs/coins.png')} alt="" /> <h4 className="container__title"> {this.state.user.coins}</h4>
         </span>
         <span className="container">
-          <img src={require('../assets/imgs/bitcoin.png')} alt="" /> <h4 className="container__title">{this.state.bitcoindRate}</h4>
+          <img src={require('../assets/imgs/bitcoin.png')} alt="" /> <h4 className="container__title">{this.state.bitcoinRate}</h4>
         </span>
       </section>
     )

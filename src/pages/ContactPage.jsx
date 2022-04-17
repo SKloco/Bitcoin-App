@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { contactService } from '../services/contact.service'
 import { ContactList } from '../components/ContactList'
 import { ContactFilter } from '../components/ContactFilter'
+import { Link } from 'react-router-dom'
 
 
 export class ContactPage extends Component {
@@ -19,16 +20,10 @@ export class ContactPage extends Component {
     this.setState({ contacts })
   }
 
-  onRemoveContact = async (contactId) => {
-    await contactService.remove(contactId)
-    this.loadContacts()
-  }
-
   onChangeFilter = (filterBy) => {
     console.log('filterBy:', filterBy)
     this.setState({ filterBy }, this.loadContacts)
-
-}
+  }
   render() {
     const { contacts } = this.state
 
@@ -37,7 +32,8 @@ export class ContactPage extends Component {
       <div>
         <section>
           <ContactFilter onChangeFilter={this.onChangeFilter} />
-          <ContactList onRemoveContact={this.onRemoveContact} onSelectContact={this.props.onSelectContact} contacts={contacts} />
+          <ContactList history={this.props.history} contacts={contacts} />
+          <Link to="/contact/edit/">Add</Link>
         </section>
       </div>
     )

@@ -4,6 +4,9 @@ import { HomePage } from './HomePage'
 import { ContactPage } from './ContactPage'
 import { ContactDetailsPage } from './ContactDetailsPage'
 import { StatisticPage } from './StatisticPage'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min'
+import { ContactEditPage } from './ContactEditPage'
+
 export class BitcoinApp extends Component {
   state = {
     currentPage: 'Home',
@@ -16,28 +19,34 @@ export class BitcoinApp extends Component {
   onSelectContact = async (contactId) => {
     this.setState({ selectedcontactId: contactId }, this.setState({ currentPage: 'ContactDetailsPage' }))
   }
-  CurrPage = () => {
-    switch (this.state.currentPage) {
-      case 'Home':
-        return <HomePage />
-      case 'Contact':
-        return <ContactPage onSelectContact={this.onSelectContact} />
-      case 'ContactDetailsPage':
-        return <ContactDetailsPage contactId={this.state.selectedcontactId} />
-      case 'StatisticPage':
-        return <StatisticPage />
-      default:
-        return <HomePage />
-    }
-  }
+  // CurrPage = () => {
+  //   switch (this.state.currentPage) {
+  //     case 'Home':
+  //       return <HomePage />
+  //     case 'Contact':
+  //       return <ContactPage onSelectContact={this.onSelectContact} />
+  //     case 'ContactDetailsPage':
+  //       return <ContactDetailsPage contactId={this.state.selectedcontactId} />
+  //     case 'StatisticPage':
+  //       return <StatisticPage />
+  //     default:
+  //       return <HomePage />
+  //   }
+  // }
   render() {
-    const { currentPage } = this.state
-    if (!currentPage) return <div>Loading...</div>
+    // const { currentPage } = this.state
+    // if (!currentPage) return <div>Loading...</div>
     return (
-      <div>
-        <AppHeader changePage={this.changePage} />
-        <this.CurrPage />
-      </div>
+      <Router>
+        <AppHeader  />
+        <Switch>
+          <Route path="/contact/edit/:id?" component={ContactEditPage} />
+          <Route path="/contact/:id" component={ContactDetailsPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/statistic" component={StatisticPage} />
+          <Route path="/" component={HomePage} />
+        </Switch>
+      </Router>
     )
   }
 }
