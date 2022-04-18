@@ -1,18 +1,24 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import { TransferFund } from '../components/TransferFunds'
 import { contactService } from '../services/contact.service'
+import userService from '../services/user.service'
 
 export class ContactDetailsPage extends Component {
   state = {
     chosenContact: null,
+    loggedinUser: null,
   }
   componentDidMount() {
     this.loadContact()
+    this.loadLoggedinUser()
   }
 
+  cd
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.loadContact()
+      this.loadLoggedinUser()
     }
   }
 
@@ -23,6 +29,13 @@ export class ContactDetailsPage extends Component {
   onBack = () => {
     this.props.history.push('/contact')
     // this.props.history.goBack()
+  }
+  onTransferCoins = (amount) => {
+    userService.addMove(this.state.chosenContact, amount)
+  }
+  loadLoggedinUser = () => {
+    const loggedinUser = userService.getLoggedInUser()
+    this.setState({ loggedinUser })
   }
   render() {
     const { chosenContact } = this.state
@@ -42,6 +55,8 @@ export class ContactDetailsPage extends Component {
           <Link to={`/contact/edit/${chosenContact._id}`}>Edit Contact</Link>
           {/* <Link to="/robot/r2">Next Robot</Link> */}
         </section>
+
+        <TransferFund contact={this.state.chosenContact} maxCoins={this.state.loggedinUser.coins} onTransferCoins={this.onTransferCoins} />
       </>
     )
   }

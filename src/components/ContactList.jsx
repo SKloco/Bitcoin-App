@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import { ContactPreview } from './ContactPreview'
 export function ContactList({ contacts, history }) {
   return (

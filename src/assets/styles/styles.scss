@@ -13,8 +13,13 @@
 @import 'components/contact-list';
 @import 'components/contact-filter';
 @import 'components/app-header';
+@import 'components/move-list';
+@import 'components/transfer-funds';
 
 // PAGES
 @import 'pages/home-page';
 @import 'pages/contact-edit-page';
 @import 'pages/contact-detail-page';
+@import 'pages/contact-page';
+@import 'pages/signup';
+

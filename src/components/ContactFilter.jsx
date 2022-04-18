@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export class ContactFilter extends Component {
   state = {
-    term: '',
+    term: this.props.filterBy?.term || '',
   }
 
   handleChange = ({ target }) => {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import userService from '../services/user.service'
 import bitcoinService from '../services/bitcoin.service'
+import { MoveList } from '../components/MoveList'
 
 export class HomePage extends Component {
   state = {
@@ -14,7 +15,9 @@ export class HomePage extends Component {
   }
 
   async loadUser() {
-    this.setState({ user: userService.getUser() })
+    const user = userService.getLoggedInUser()
+    console.log('loggedinuser', user)
+    this.setState({ user })
   }
   async loadRate() {
     const bitcoinRate = await bitcoinService.getRate()
@@ -34,6 +37,9 @@ export class HomePage extends Component {
         <span className="container">
           <img src={require('../assets/imgs/bitcoin.png')} alt="" /> <h4 className="container__title">{this.state.bitcoinRate}</h4>
         </span>
+        <section>
+          <MoveList movesList={user.moves} title="My Moves" />
+        </section>
       </section>
     )
   }
