@@ -9,19 +9,19 @@ export function MoveList({ title, movesList }) {
         {movesList.map((move) => (
           <li>
             <span className="item">
-              <span>to:</span>
+              <span>to: </span>
               <span>{move.to}</span>
             </span>
             <span className="item">
-              <span>to id:</span>
+              <span>to id: </span>
               <span>{move.toId}</span>
             </span>
             <span className="item">
-              <span>at:</span>
-              <span>{move.at}</span>
+              <span>at: </span>
+              <span>{new Date(move.at).toLocaleString()}</span>
             </span>
             <span className="item">
-              <span>amount:</span>
+              <span>amount: </span>
               <span>{move.amount}</span>
             </span>
           </li>

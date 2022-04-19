@@ -1,4 +1,4 @@
-import { Component, createRef } from 'react'
+import { Component } from 'react'
 import { contactService } from '../services/contact.service'
 import { connect } from 'react-redux'
 import { removeContact, saveContact } from '../store/actions/contactActions'
@@ -9,14 +9,11 @@ export class _ContactEditPage extends Component {
     changed: false,
   }
 
-  // inputRef = createRef()
-
   async componentDidMount() {
     const id = this.props.match.params.id
     const contact = id ? await contactService.getContactById(id) : contactService.getEmptyContact()
     this.setState({ contact }, () => {})
     console.log('inputref', this.inputRef)
-    this.inputRef.current.focus()
   }
   onRemoveContact = async () => {
     await this.props.removeContact(this.state.contact._id)
@@ -30,9 +27,7 @@ export class _ContactEditPage extends Component {
     this.setState({ changed: true })
   }
   onSaveContact = async () => {
-    // const contact =
     this.props.saveContact(this.state.contact)
-    // this.setState({ contact }, () => this.onBack())
     this.onBack()
   }
   onBack = () => {

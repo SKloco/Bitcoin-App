@@ -12,7 +12,7 @@ export class TransferFund extends Component {
   }
 
   onTransferCoins = () => {
-    this.props.onTransferCoins(this.state)
+    this.props.onTransferCoins(this.state.amount)
   }
 
   render() {

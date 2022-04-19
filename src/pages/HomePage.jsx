@@ -29,17 +29,20 @@ export class HomePage extends Component {
     if (!user) return <div>Loading...</div>
 
     return (
-      <section className="home-page">
-        <h1>{this.state.user.name}</h1>
-        <span className="container">
-          <img src={require('../assets/imgs/coins.png')} alt="" /> <h4 className="container__title"> {this.state.user.coins}</h4>
-        </span>
-        <span className="container">
-          <img src={require('../assets/imgs/bitcoin.png')} alt="" /> <h4 className="container__title">{this.state.bitcoinRate}</h4>
-        </span>
-        <section>
-          <MoveList movesList={user.moves} title="My Moves" />
+      <section className="home">
+        <section className="profile">
+          <img className="profile__img" src={require('../assets/imgs/profile.png')} alt="" />
+          <h1 className="profile__name">{this.state.user.name}</h1>
+          <span className="profile__item">
+            <img className="profile__item__icon" src={require('../assets/imgs/coins.png')} alt="" />
+            <h4 className="profile__item__data"> {this.state.user.coins}</h4>
+          </span>
+          <span className="profile__item">
+            <img className="profile__item__icon" src={require('../assets/imgs/bitcoin.png')} alt="" />
+            <h4 className="profile__item__data">{this.state.bitcoinRate}</h4>
+          </span>
         </section>
+        <MoveList movesList={user.moves} title="My Moves" />
       </section>
     )
   }

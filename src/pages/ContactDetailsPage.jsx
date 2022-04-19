@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import { MoveList } from '../components/MoveList'
 import { TransferFund } from '../components/TransferFunds'
 import { contactService } from '../services/contact.service'
 import userService from '../services/user.service'
@@ -32,13 +33,15 @@ export class ContactDetailsPage extends Component {
   }
   onTransferCoins = (amount) => {
     userService.addMove(this.state.chosenContact, amount)
+    this.loadContact()
+    this.loadLoggedinUser()
   }
   loadLoggedinUser = () => {
     const loggedinUser = userService.getLoggedInUser()
     this.setState({ loggedinUser })
   }
   render() {
-    const { chosenContact } = this.state
+    const { chosenContact, loggedinUser } = this.state
     if (!chosenContact) return <div>Loading ....</div>
     return (
       <>
@@ -57,6 +60,7 @@ export class ContactDetailsPage extends Component {
         </section>
 
         <TransferFund contact={this.state.chosenContact} maxCoins={this.state.loggedinUser.coins} onTransferCoins={this.onTransferCoins} />
+        <MoveList movesList={loggedinUser.moves.filter((m) => m.toId === chosenContact._id)} title="My Moves" />
       </>
     )
   }

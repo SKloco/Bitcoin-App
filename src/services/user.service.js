@@ -1,7 +1,7 @@
 //imports
-import axios from 'axios'
 import { storageService } from './storage.service'
 //exports
+// eslint-disable-next-line
 export default {
   getLoggedInUser,
   signup,
@@ -70,8 +70,8 @@ function signup(userName) {
   storageService.saveToStorage(LOGGED_IN_USER_KEY, gLoggedInUser)
 }
 
-function addMove(contact, {amount}) {
-  console.log('amount from addMove',amount)
+function addMove(contact, amount) {
+  console.log('amount from addMove', amount)
   const move = {
     toId: contact._id,
     to: contact.name,

@@ -1,15 +1,37 @@
-.home-page {
-  img {
-    width: 30px;
-    height: 30px;
-  }
-  .container {
+.home {
+  background-image: url(../../imgs/bg.png);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .profile {
     display: flex;
-    justify-items: center;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
 
-    &__title {
-      align-self: center;
+    &__img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    &__name {
+      font-family: OpenSans-Bold;
+      font-size: 24px;
+    }
+    &__item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 150px;
+      gap: 10px;
+
+      &__data {
+        font-family: OpenSans-Regular;
+        font-size: 20px;
+      }
+      &__icon {
+        width: 40px;
+      }
     }
   }
 }
